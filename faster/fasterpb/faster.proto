@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package faster;
+option go_package = "/fasterpb";
+
+message InferNetworkSpeedRequest {
+  bytes payload = 1;
+}
+
+message InferNetworkSpeedResponse {
+  string speed = 1;
+}
+
+service FasterService {
+  //Unary with deadline
+  rpc InferNetworkSpeed (InferNetworkSpeedRequest) 
+  returns (InferNetworkSpeedResponse);
+}
