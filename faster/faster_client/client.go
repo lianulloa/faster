@@ -33,6 +33,8 @@ func getNetworkSpeed(c fasterpb.FasterServiceClient) {
 	fmt.Println("Infering network speed")
 
 	amounts := [4]int{
+		//maybe take into account bytes issue by gRPC when encoding messages
+		//see notes.md
 		int(math.Pow(2, 17)),
 		int(math.Pow(2, 18)),
 		int(math.Pow(2, 19)),
